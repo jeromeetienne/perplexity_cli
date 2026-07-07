@@ -1,5 +1,5 @@
 {
-	"name": "perplexity_cli",
+	"name": "@jetienne/perplexity_cli",
 	"version": "1.0.3",
 	"description": "CLI for searching the web using Perplexity AI",
 	"main": "dist/src/cli.js",
@@ -24,7 +24,7 @@
 		"start": "node dist/src/cli.js",
 		"test": "node --require tsx/cjs --test tests/*.test.ts",
 		"prepublishOnly": "npm run build",
-		"publish:all": "npm run build && npm version patch && npm publish"
+		"publish:all": "npm run build && npm version patch && npm publish --access public"
 	},
 	"keywords": [],
 	"author": "",
