@@ -7,20 +7,30 @@
 		"perplexity-cli": "./dist/src/cli.js",
 		"perplexity_cli": "./dist/src/cli.js"
 	},
+	"files": [
+		"dist",
+		"README.md",
+		"skills"
+	],
+	"repository": {
+		"type": "git",
+		"url": "git+https://github.com/jeromeetienne/perplexity_cli.git"
+	},
 	"scripts": {
 		"build": "tsc -p tsconfig.json",
 		"postbuild": "chmod +x ./dist/src/cli.js",
 		"typecheck": "tsc --noEmit",
 		"dev": "tsx ./src/cli.ts",
 		"start": "node dist/src/cli.js",
-		"test": "node --require tsx/cjs --test tests/*.test.ts"
+		"test": "node --require tsx/cjs --test tests/*.test.ts",
+		"prepublishOnly": "npm run build"
 	},
 	"keywords": [],
 	"author": "",
 	"license": "ISC",
 	"type": "commonjs",
 	"dependencies": {
-		"@perplexity-ai/perplexity_ai": "latest",
+		"@perplexity-ai/perplexity_ai": "^0.34.0",
 		"commander": "^14.0.3"
 	},
 	"devDependencies": {
