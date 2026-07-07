@@ -4,7 +4,6 @@
 	"description": "CLI for searching the web using Perplexity AI",
 	"main": "dist/src/cli.js",
 	"bin": {
-		"perplexity-cli": "./dist/src/cli.js",
 		"perplexity_cli": "./dist/src/cli.js"
 	},
 	"files": [
