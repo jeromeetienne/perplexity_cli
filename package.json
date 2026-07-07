@@ -1,6 +1,6 @@
 {
 	"name": "perplexity_cli",
-	"version": "1.0.2",
+	"version": "1.0.3",
 	"description": "CLI for searching the web using Perplexity AI",
 	"main": "dist/src/cli.js",
 	"bin": {
