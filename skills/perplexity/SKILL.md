@@ -21,27 +21,33 @@ A CLI for searching the web and running deep research queries using Perplexity A
 
 | Goal                                    | Command                                                                      |
 |-----------------------------------------|------------------------------------------------------------------------------|
-| Basic search                            | `npx perplexity_cli search -q "query"`                                       |
-| Multi-query batch search                | `npx perplexity_cli search -q "query1" -q "query2"`                          |
-| Search with country filter              | `npx perplexity_cli search -q "query" --country US`                          |
-| Search with domain allowlist            | `npx perplexity_cli search -q "query" --domain wikipedia.org`                |
-| Search with domain blocklist            | `npx perplexity_cli search -q "query" --domain -example.com`                 |
-| Search with language filter             | `npx perplexity_cli search -q "query" --language en`                         |
-| Deep research (markdown output)         | `npx perplexity_cli deep-search -q "query" -m`                               |
-| Deep research with preset               | `npx perplexity_cli deep-search -q "query" -p advanced-deep-research`        |
-| Install skill                           | `npx perplexity_cli install --skill`                                         |
+| Basic search                            | `npx @jetienne/perplexity_cli search -q "query"`                                       |
+| Multi-query batch search                | `npx @jetienne/perplexity_cli search -q "query1" -q "query2"`                          |
+| Search with country filter              | `npx @jetienne/perplexity_cli search -q "query" --country US`                          |
+| Search with domain allowlist            | `npx @jetienne/perplexity_cli search -q "query" --domain wikipedia.org`                |
+| Search with domain blocklist            | `npx @jetienne/perplexity_cli search -q "query" --domain -example.com`                 |
+| Search with language filter             | `npx @jetienne/perplexity_cli search -q "query" --language en`                         |
+| Deep research (markdown output)         | `npx @jetienne/perplexity_cli deep-search -q "query" -m`                               |
+| Deep research with preset               | `npx @jetienne/perplexity_cli deep-search -q "query" -p advanced-deep-research`        |
+| Install skill                           | `npx @jetienne/perplexity_cli install --skill`                                         |
 
 ---
 
 ## Setup
 
+No install needed — run it on demand with `npx @jetienne/perplexity_cli`. Just set the API key:
+
 ```bash
-cd packages/perplexity_cli
+export PERPLEXITY_API_KEY=pplx-your-key-here
+```
+
+To hack on it from source instead:
+
+```bash
+git clone https://github.com/jeromeetienne/perplexity_cli
+cd perplexity_cli
 npm install
 npm run build
-
-# Set API key
-export PERPLEXITY_API_KEY=pplx-your-key-here
 ```
 
 ---
@@ -54,25 +60,25 @@ Searches the web and returns a list of results (title, URL, snippet).
 
 ```bash
 # Single query
-npx perplexity_cli search -q "TypeScript generics"
+npx @jetienne/perplexity_cli search -q "TypeScript generics"
 
 # Multiple queries in one request (up to 5)
-npx perplexity_cli search -q "TypeScript generics" -q "TypeScript decorators"
+npx @jetienne/perplexity_cli search -q "TypeScript generics" -q "TypeScript decorators"
 
 # Regional results
-npx perplexity_cli search -q "weather forecast" --country FR
+npx @jetienne/perplexity_cli search -q "weather forecast" --country FR
 
 # Domain filter (allow only specific domain)
-npx perplexity_cli search -q "machine learning" --domain arxiv.org
+npx @jetienne/perplexity_cli search -q "machine learning" --domain arxiv.org
 
 # Domain filter (block a domain, prefix with -)
-npx perplexity_cli search -q "machine learning" --domain -example.com
+npx @jetienne/perplexity_cli search -q "machine learning" --domain -example.com
 
 # Language filter
-npx perplexity_cli search -q "intelligence artificielle" --language fr
+npx @jetienne/perplexity_cli search -q "intelligence artificielle" --language fr
 
 # Limit results
-npx perplexity_cli search -q "rust programming" --max-results 5
+npx @jetienne/perplexity_cli search -q "rust programming" --max-results 5
 ```
 
 **Options:**
@@ -93,16 +99,16 @@ Runs a comprehensive research query using Perplexity AI presets. Returns a full 
 
 ```bash
 # Deep research (default preset), plain text output
-npx perplexity_cli deep-search -q "explain transformer neural networks"
+npx @jetienne/perplexity_cli deep-search -q "explain transformer neural networks"
 
 # Deep research with markdown output
-npx perplexity_cli deep-search -q "explain transformer neural networks" -m
+npx @jetienne/perplexity_cli deep-search -q "explain transformer neural networks" -m
 
 # Fast search preset
-npx perplexity_cli deep-search -q "capital of France" -p fast-search
+npx @jetienne/perplexity_cli deep-search -q "capital of France" -p fast-search
 
 # Advanced deep research
-npx perplexity_cli deep-search -q "impact of quantum computing on cryptography" -p advanced-deep-research -m
+npx @jetienne/perplexity_cli deep-search -q "impact of quantum computing on cryptography" -p advanced-deep-research -m
 ```
 
 **Options:**
@@ -129,7 +135,7 @@ npx perplexity_cli deep-search -q "impact of quantum computing on cryptography" 
 Copies the perplexity skill folder into the current working directory.
 
 ```bash
-npx perplexity_cli install --skill
+npx @jetienne/perplexity_cli install --skill
 ```
 
 ---

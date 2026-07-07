@@ -7,10 +7,20 @@ CLI for searching the web and running deep research queries using [Perplexity AI
 - Node.js 20+
 - A [Perplexity API key](https://www.perplexity.ai/settings/api)
 
-## Setup
+## Install
+
+Published on npm as [`@jetienne/perplexity_cli`](https://www.npmjs.com/package/@jetienne/perplexity_cli). Run it on demand:
 
 ```bash
-cd packages/perplexity_cli
+export PERPLEXITY_API_KEY=pplx-your-key-here
+npx @jetienne/perplexity_cli search -q "TypeScript generics"
+```
+
+## Develop from source
+
+```bash
+git clone https://github.com/jeromeetienne/perplexity_cli
+cd perplexity_cli
 npm install
 export PERPLEXITY_API_KEY=pplx-your-key-here
 ```
