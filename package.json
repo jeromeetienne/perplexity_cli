@@ -1,6 +1,6 @@
 {
 	"name": "@jetienne/perplexity_cli",
-	"version": "1.0.3",
+	"version": "1.0.4",
 	"description": "CLI for searching the web using Perplexity AI",
 	"main": "dist/src/cli.js",
 	"bin": {
